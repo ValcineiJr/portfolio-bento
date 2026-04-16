@@ -1,26 +1,45 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* ==========================================
+     1. SISTEMA DE CORES
+     ========================================== */
+  --color-surface-base: #0D0D12;
+  --color-surface-card: #15151E;
+  --color-surface-hover: #1A1A24;
+
+  /* ==========================================
+     2. TIPOGRAFIA FLUIDA (Tailwind v4)
+     Sintaxe: clamp(mobile, curva de crescimento, desktop)
+     ========================================== */
+  
+  /* Tamanhos minúsculos para chips e subtítulos (9px a 10px) */
+  --text-micro: clamp(0.688rem, 1vw, 0.75rem);
+  
+  /* Textos secundários pequenos (10px a 11px) */
+  --text-mini: clamp(0.75rem, 1.2vw, 0.813rem);
+  
+  /* Substituindo o xs padrão (11px a 12px) */
+  --text-xs: clamp(0.813rem, 1.5vw, 0.875rem);
+  
+  /* Substituindo o sm padrão (12px a 14px) */
+  --text-sm: clamp(0.875rem, 2vw, 1rem);
+  
+  /* Títulos de destaque numéricos (24px a 28px) */
+  --text-3xl: clamp(1.625rem, 3vw, 1.875rem);
+  
+  /* Nome Principal (28px a 32px) */
+  --text-4xl: clamp(1.875rem, 4vw, 2.125rem);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-surface-base text-slate-200 antialiased selection:bg-purple-500/30 overflow-x-hidden;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .glow-purple {
+    box-shadow: 0 0 40px -10px rgba(168, 85, 247, 0.15);
+  }
 }
