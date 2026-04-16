@@ -30,12 +30,18 @@ export default function Profile() {
               Disponível
             </span>
           </div>
-          <button className="bg-surface-hover hover:bg-white/10 border border-white/5 text-slate-300 px-3 py-1.5 rounded-full text-micro font-medium transition-colors flex items-center gap-1.5">
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            href="/curriculo.pdf" // Caminho do arquivo que está na pasta public
+            download="Curriculo ValcineiJr.pdf" // Nome que o arquivo terá quando baixar
+            className="bg-surface-hover hover:bg-white/10 border border-white/5 text-slate-300 px-3 py-1.5 rounded-full text-micro font-medium transition-colors flex items-center gap-1.5 cursor-pointer"
+          >
             Currículo{" "}
             <span className="text-purple-400 ">
               <FaDownload size={15} />
             </span>
-          </button>
+          </motion.a>
         </div>
       </div>
 
