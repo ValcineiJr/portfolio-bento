@@ -15,7 +15,7 @@ export default function Profile() {
       <div className="flex justify-between items-start mb-3">
         <div className="w-30 h-30 bg-gradient-to-br from-purple-600/30 to-blue-500/20 rounded-2xl border border-purple-500/40 flex-shrink-0">
           <Image
-            src={"https://github.com/valcineijr.png"}
+            src={"https://i.imgur.com/s6fmlKP.jpeg"}
             className="rounded-2xl "
             width={120}
             height={120}
@@ -41,7 +41,7 @@ export default function Profile() {
 
       <div className="mb-3 text-center md:text-left">
         <h1 className="text-4xl font-bold text-white tracking-tight">
-          Valcinei
+          Valcinei Junior
         </h1>
         <p className="text-xs font-medium text-slate-400 mt-0.5">
           Engenheiro Front-End & <span className="text-purple-400">UI</span>
