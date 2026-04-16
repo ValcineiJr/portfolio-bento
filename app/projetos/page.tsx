@@ -5,7 +5,7 @@ import { useProjectStore } from "../store/useProjectStore";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ArrowLeft, Eye } from "lucide-react"; // Lembre-se de ter o lucide-react instalado
+import { ArrowLeft, Eye } from "lucide-react";
 
 export default function ProjetosPage() {
   const allProjects = useProjectStore((state) => state.projects);
@@ -25,16 +25,22 @@ export default function ProjetosPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {allProjects.map((project, i) => (
-            <Link href={`/projetos/${project.id}`} key={project.id}>
+            <Link
+              href={`/projetos/${project.id}`}
+              key={project.id}
+              // ADIÇÃO 1: Transforma o link num bloco que preenche 100% da altura da célula do Grid
+              className="block h-full"
+            >
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 whileHover={{ y: -5 }}
-                className="bg-surface-card border border-white/5 rounded-2xl overflow-hidden flex flex-col group cursor-pointer"
+                // ADIÇÃO 2: Adicionado h-full para o card herdar a altura máxima do Link
+                className="h-full bg-surface-card border border-white/5 rounded-2xl overflow-hidden flex flex-col group cursor-pointer"
               >
                 {/* Capa do Projeto */}
-                <div className="relative h-48 w-full border-b border-white/5 overflow-hidden">
+                <div className="relative h-48 w-full border-b border-white/5 overflow-hidden flex-shrink-0">
                   <Image
                     src={project.coverImage}
                     alt={project.title}

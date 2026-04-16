@@ -150,7 +150,8 @@ export default function ProjectMonitor() {
                     className="w-full flex items-center justify-between bg-surface-hover hover:bg-white/10 border border-white/5 py-3.5 px-6 rounded-xl text-white font-medium text-sm transition-colors group"
                   >
                     <span className="flex items-center gap-3">
-                      <span className="text-xl">{link.icon}</span> {link.label}
+                      <link.Icon size={20} />
+                      {link.label}
                     </span>
                     <span className="text-slate-500 group-hover:text-purple-400 transition-colors transform group-hover:translate-x-1">
                       →
